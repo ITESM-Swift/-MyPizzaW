@@ -1,15 +1,207 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="6221" systemVersion="13E28" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="3733"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="9515"/>
     </dependencies>
     <scenes>
         <!--Interface Controller-->
         <scene sceneID="aou-V4-d1y">
             <objects>
-                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModuleProvider="target"/>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="myPizzaWatch_WatchKit_App" customModuleProvider="target">
+                    <items>
+                        <label width="136" alignment="left" text="Bienvenido a Mi Pizza" textAlignment="center" id="SjD-JE-cF1">
+                            <fontDescription key="font" type="system" pointSize="13"/>
+                        </label>
+                        <group width="1" alignment="left" id="IrF-JL-uir">
+                            <items>
+                                <label alignment="left" text="Tamaño:" id="h7X-HJ-ENS"/>
+                                <label width="68.5" alignment="left" text="Label" textAlignment="right" id="6u6-K3-nlM"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="tHz-ME-vz3">
+                            <connections>
+                                <action selector="selTamanio:" destination="AgC-eL-Hgc" id="ai5-y1-jjB"/>
+                            </connections>
+                        </slider>
+                        <separator alignment="left" id="Eyf-LF-XvY"/>
+                        <button width="1" alignment="left" title="Siguiente" id="fF2-Am-lSh">
+                            <connections>
+                                <action selector="setTamanyo" destination="AgC-eL-Hgc" id="e9P-C5-qm5"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblTamanyo" destination="6u6-K3-nlM" id="5BY-mQ-5ju"/>
+                    </connections>
+                </controller>
             </objects>
+            <point key="canvasLocation" x="245" y="350"/>
+        </scene>
+        <!--vistaMasa-->
+        <scene sceneID="1gI-3u-boM">
+            <objects>
+                <controller identifier="vistaMasa" id="dyR-sQ-GPJ" customClass="vistaMasa" customModule="myPizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label width="134.5" alignment="left" text="Mi Pizza" textAlignment="center" id="j6u-0s-7BE"/>
+                        <group width="1" alignment="left" id="W5g-ij-v6R">
+                            <items>
+                                <label alignment="left" text="Masa:" id="Nrj-Sw-8dC"/>
+                                <label width="88.5" alignment="left" text="Label" textAlignment="right" id="wt6-vw-0xD"/>
+                            </items>
+                        </group>
+                        <slider width="1" alignment="left" value="1" maximum="3" steps="3" id="kWW-9T-WnL">
+                            <connections>
+                                <action selector="selMasa:" destination="dyR-sQ-GPJ" id="OBq-VN-J9g"/>
+                            </connections>
+                        </slider>
+                        <separator alignment="left" id="FDh-is-qyU"/>
+                        <group width="1" alignment="left" id="sO4-wZ-AZ7">
+                            <items>
+                                <separator alignment="left" id="lof-Cg-UJQ"/>
+                            </items>
+                        </group>
+                        <button width="1" alignment="left" title="Siguiente" id="lnf-VH-qRB">
+                            <connections>
+                                <action selector="setMasa" destination="dyR-sQ-GPJ" id="RH2-Q8-Sa7"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblMasa" destination="wt6-vw-0xD" id="3Ac-9l-L5W"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="423" y="350"/>
+        </scene>
+        <!--vistaQueso-->
+        <scene sceneID="Jkh-yO-SrY">
+            <objects>
+                <controller identifier="vistaQueso" id="ugP-2D-d6d" customClass="vistaQueso" customModule="myPizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label width="136" alignment="left" text="Mi Pizza" textAlignment="center" id="gKG-79-ZQD"/>
+                        <group width="1" alignment="left" id="5yg-Zd-5g3">
+                            <items>
+                                <label alignment="left" text="Queso:" id="a3b-R1-46A"/>
+                                <label width="80.5" alignment="left" text="Label" textAlignment="right" id="WaY-Rh-Gia"/>
+                            </items>
+                        </group>
+                        <picker height="55" alignment="left" id="pUs-wD-Quh">
+                            <connections>
+                                <action selector="selQueso:" destination="ugP-2D-d6d" id="j53-nX-aYh"/>
+                            </connections>
+                        </picker>
+                        <separator alignment="left" id="fDY-As-K9I"/>
+                        <button width="1" alignment="left" title="Siguiente" id="QSp-Ht-dcO">
+                            <connections>
+                                <action selector="setQueso" destination="ugP-2D-d6d" id="j0O-lZ-MVD"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblQueso" destination="WaY-Rh-Gia" id="iZJ-lW-4C8"/>
+                        <outlet property="menuQuesos" destination="pUs-wD-Quh" id="XCR-eE-JKb"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="600" y="349"/>
+        </scene>
+        <!--vistaIngredientes-->
+        <scene sceneID="vsh-jg-n7C">
+            <objects>
+                <controller identifier="vistaIngredientes" id="Spm-rH-5yC" customClass="vistaIngrediantes" customModule="myPizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label width="133.5" alignment="left" text="Mi Pizza" textAlignment="center" id="IYc-6n-I5e"/>
+                        <group width="1" alignment="left" id="VW5-au-Kgj">
+                            <items>
+                                <label width="103" alignment="left" text="Elije hasta 5 ingredientes" numberOfLines="2" minimumScaleFactor="0.80000000000000004" id="EtQ-OM-5yE"/>
+                                <label width="27.5" height="36.5" alignment="left" text="0" textAlignment="center" id="0fr-Qm-3ux">
+                                    <color key="textColor" red="0.20000000000000001" green="0.85882352941176465" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" type="system" weight="semibold" pointSize="20"/>
+                                </label>
+                            </items>
+                        </group>
+                        <picker height="70" alignment="left" id="XtF-29-HTe">
+                            <connections>
+                                <action selector="selIngredientes:" destination="Spm-rH-5yC" id="e9Q-fO-OKm"/>
+                            </connections>
+                        </picker>
+                        <group width="1" alignment="left" id="uzf-py-zCK">
+                            <items>
+                                <button width="67" alignment="left" title="+" id="CVw-em-yVj">
+                                    <connections>
+                                        <action selector="agregarIngrediente" destination="Spm-rH-5yC" id="rZG-Y6-xa5"/>
+                                    </connections>
+                                </button>
+                                <separator alignment="left" id="gr5-Ne-0qZ"/>
+                                <button width="68" alignment="left" title="-" id="x15-Ve-CVl">
+                                    <connections>
+                                        <action selector="eliminarIngrediente" destination="Spm-rH-5yC" id="SXi-f2-l6w"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <label width="1" alignment="left" text="Tus ingredientes:" textAlignment="center" id="qCn-eh-4KV">
+                            <fontDescription key="font" type="system" pointSize="12"/>
+                        </label>
+                        <label width="1" alignment="left" text="Label" textAlignment="center" numberOfLines="5" id="l7k-YW-7JL">
+                            <color key="textColor" red="0.20000000000000001" green="0.85882352941176465" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="16"/>
+                        </label>
+                        <separator alignment="left" id="BSK-49-Ztv"/>
+                        <button width="1" alignment="left" title="Siguiente" id="V7S-eh-TYp">
+                            <connections>
+                                <action selector="setIngredientes" destination="Spm-rH-5yC" id="ySn-Ly-qWz"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblCantIngredientes" destination="0fr-Qm-3ux" id="TJB-R4-FW4"/>
+                        <outlet property="lblSalida" destination="l7k-YW-7JL" id="ZW9-iX-BkJ"/>
+                        <outlet property="pickIngredientes" destination="XtF-29-HTe" id="qZ6-JL-n6c"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="798" y="355"/>
+        </scene>
+        <!--vistaConfirmar-->
+        <scene sceneID="CUI-mB-QVb">
+            <objects>
+                <controller identifier="vistaConfirmar" id="ySj-rW-xpi" customClass="vistaConfirma" customModule="myPizzaWatch_WatchKit_Extension">
+                    <items>
+                        <label width="1" height="19.5" alignment="left" text="Mi Pizza" textAlignment="center" id="qEg-jL-ZTR"/>
+                        <separator alignment="left" id="A99-x8-MD0"/>
+                        <label width="1" alignment="left" text="Confirma tu Pedido" textAlignment="center" id="TIJ-da-tac">
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                        <label width="1" alignment="left" text="Ingredientes" textAlignment="center" numberOfLines="10" id="xv8-PV-Yhd">
+                            <color key="textColor" red="0.20000000000000001" green="0.85882352941176465" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="font" type="system" pointSize="15"/>
+                        </label>
+                        <separator alignment="left" id="6Ga-w2-ggw"/>
+                        <button width="1" alignment="left" title="Ordenar" id="BOi-lH-8fo">
+                            <connections>
+                                <segue destination="JiA-Sm-Kb8" kind="push" id="lag-jm-lgU"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="lblSalida" destination="xv8-PV-Yhd" id="aWF-Ev-ZCB"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1005" y="350"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="2yR-cr-oXk">
+            <objects>
+                <controller id="JiA-Sm-Kb8">
+                    <items>
+                        <label width="1" height="1" alignment="left" text="Gracias por tu compra" textAlignment="center" numberOfLines="2" id="tgj-t9-MrM"/>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1201" y="349"/>
         </scene>
     </scenes>
 </document>
