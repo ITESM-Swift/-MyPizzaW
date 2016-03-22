@@ -179,18 +179,29 @@
                             <fontDescription key="font" type="system" pointSize="15"/>
                         </label>
                         <separator alignment="left" id="6Ga-w2-ggw"/>
-                        <button width="1" alignment="left" title="Ordenar" id="BOi-lH-8fo">
-                            <connections>
-                                <segue destination="JiA-Sm-Kb8" kind="push" id="lag-jm-lgU"/>
-                            </connections>
-                        </button>
+                        <group width="1" alignment="left" id="WHp-aE-G8n">
+                            <items>
+                                <button width="68" alignment="left" title="Ordenar" id="BOi-lH-8fo">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                    <connections>
+                                        <segue destination="JiA-Sm-Kb8" kind="push" id="lag-jm-lgU"/>
+                                    </connections>
+                                </button>
+                                <button width="65" alignment="left" title="Cancelar" id="t32-I2-RXD">
+                                    <fontDescription key="font" type="system" pointSize="12"/>
+                                    <connections>
+                                        <segue destination="Dvp-Oj-yHv" kind="push" id="JW7-Vq-nKe"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
                     </items>
                     <connections>
                         <outlet property="lblSalida" destination="xv8-PV-Yhd" id="aWF-Ev-ZCB"/>
                     </connections>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1005" y="350"/>
+            <point key="canvasLocation" x="1005" y="349"/>
         </scene>
         <!--Interface Controller-->
         <scene sceneID="2yR-cr-oXk">
@@ -201,7 +212,35 @@
                     </items>
                 </controller>
             </objects>
-            <point key="canvasLocation" x="1201" y="349"/>
+            <point key="canvasLocation" x="1250" y="350"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="XYa-1X-d4p">
+            <objects>
+                <controller id="Dvp-Oj-yHv">
+                    <items>
+                        <label alignment="left" text="¿Deseas crear un nuevo pedido?" textAlignment="center" numberOfLines="2" id="6pN-R6-br4"/>
+                        <group width="1" alignment="left" id="G7t-uW-yqe">
+                            <items>
+                                <button width="66" alignment="left" title="Si" id="oqd-Fn-96r">
+                                    <connections>
+                                        <segue destination="AgC-eL-Hgc" kind="push" id="ocd-TH-Pb0"/>
+                                    </connections>
+                                </button>
+                                <button width="65" alignment="left" title="No" id="BkO-eo-WHI">
+                                    <connections>
+                                        <segue destination="JiA-Sm-Kb8" kind="push" id="GML-1N-kg5"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1005" y="747"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="GML-1N-kg5"/>
+    </inferredMetricsTieBreakers>
 </document>
